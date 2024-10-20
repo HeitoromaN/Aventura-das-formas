@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circulo</title>
+    <link rel="stylesheet" href="assets/css/circulo.css">
+</head>
+<body>
+    <h1>Explorando o Círculo</h1>
+    <img src="images/icones/circulo.png" alt="Exemplo de Círculo">
+    <div class="form-container">
+        <h2>Calcule a Área do Círculo</h2>
+        <form id="areaForm">
+            <label for="radius">Raio:</label>
+            <input type="number" id="radius" name="radius" required>
+            <button type="submit">Calcular</button>
+        </form>
+        <p id="result"></p>
+    <div class="pi-calculations">
+        <h2>O valor de Pi</h2>
+        <p>Valor de Pi (π): <span id="piValue"></span></p>
+        <p>Pi ao Quadrado (π²): <span id="piSquared"></span></p>
+        <p>Raiz Quadrada de Pi (√π): <span id="sqrtPi"></span></p>
+    </div>
+
+    <script>
+        document.getElementById('piValue').textContent = Math.PI.toFixed(5);
+        document.getElementById('piSquared').textContent = Math.pow(Math.PI, 2).toFixed(5);
+        document.getElementById('sqrtPi').textContent = Math.sqrt(Math.PI).toFixed(5);
+    </script>
+    </div>
+
+    <script>
+        document.getElementById('areaForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const radius = parseFloat(document.getElementById('radius').value);
+            if (isNaN(radius) || radius <= 0) {
+                alert('Por favor, insira um valor válido para o raio em cm².');
+                return;
+            }
+            const area = Math.PI * Math.pow(radius, 2);
+            document.getElementById('result').textContent = `A área do círculo é: ${area.toFixed(2)} cm².`;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadrado</title>
+    <link rel="stylesheet" href="assets/css/quadrado.css">
+</head>
+<body>
+    <h1>Explorando o Quadrado</h1>
+    <img src="images/icones/quadrado.png" alt="Exemplo de Quadrado">
+    <div class="form-container">
+        <h2>Calcule a Área do Quadrado</h2>
+        <form id="areaForm">
+            <label for="side">Lado:</label>
+            <input type="number" id="side" name="side" required>
+            <button type="submit">Calcular</button>
+        </form>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        document.getElementById('areaForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const side = parseFloat(document.getElementById('side').value);
+            if (isNaN(side) || side <= 0) {
+                alert('Por favor, insira um valor válido para o lado em cm².');
+                return;
+            }
+            const area = Math.pow(side, 2);
+            document.getElementById('result').textContent = `A área do quadrado é: ${area.toFixed(2)} cm².`;
+        });
+    </script>
+</body>
+</html>

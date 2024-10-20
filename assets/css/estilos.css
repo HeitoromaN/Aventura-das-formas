@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    text-align: center;
+    padding: 50px;
+}
+h1 {
+    color: #333;
+}
+.shape-button {
+    display: inline-block;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    font-size: 20px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.shape-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
